@@ -29,7 +29,8 @@ class UsersRequest extends FormRequest
             'email'=>'required',
             'role_id'=>'required',
             'is_active'=>'required',
-            'password'=>'required|min:8'
+            'password' => 'min:8|required_with:password_confirmation|same:password_confirmation',
+            'password_confirmation' => 'min:8'
         ];
     }
 }

@@ -41,9 +41,8 @@ class AdminUsersController extends Controller
      */
     public function store(UsersRequest $request)//UsersRequest is our validation class
     {
-        //
-        //$this->validate($request , ['name'=>'required|max:60|min:8']);
-        return $request->all();
+        User::create($request->all());
+        return redirect('/admin/users');
     }
 
     /**
